@@ -15,7 +15,7 @@ export default function HomePage() {
 			  <p className={'mb-3 text-center'}>The home page content will be available soon.</p>
 			  <Button type={'button'} onClick={() => {
 					push(DASHBOARD_PAGES.HOME)
-			  }}>Login</Button>
+			  }}>Go to app</Button>
 		  </div>
     </div>
   );
