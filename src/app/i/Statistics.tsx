@@ -11,7 +11,7 @@ export function Statistics() {
 		<Loader />
 	) : (
 		<div className='grid grid-cols-4 gap-12 mt-7'>
-			{data?.statistics.length ? (
+			{data && data.statistics?.length ? (
 				data.statistics.map(statistic => (
 					<div
 						className='bg-border/5 rounded p-layout text-center hover:-translate-y-3 transition-transform duration-500'
