@@ -46,7 +46,7 @@ export function Auth() {
 				className='sm:w-1/1 md:w-1/2 xl:w-1/3 m-auto shadow bg-sidebar rounded-xl p-layout'
 				onSubmit={handleSubmit(onSubmit)}
 			>
-				<Heading title='Auth' />
+				<Heading title='Login or register' />
 
 				<Field
 					id='email'
@@ -54,6 +54,7 @@ export function Auth() {
 					placeholder='Enter email:'
 					type='email'
 					extra='mb-4'
+					autoComplete="username"
 					{...register('email', {
 						required: 'Email is required!'
 					})}
@@ -68,6 +69,7 @@ export function Auth() {
 						required: 'Password is required!'
 					})}
 					extra='mb-6'
+					autoComplete="current-password"
 				/>
 
 				<div className='flex items-center gap-5 justify-center'>
