@@ -15,6 +15,8 @@ import { IAuthForm } from '@/types/auth.types'
 import { DASHBOARD_PAGES } from '@/config/pages-url.config'
 
 import { authService } from '@/services/auth.service'
+import {errorCatch} from "@/api/error";
+import {AxiosError, AxiosResponse} from "axios";
 
 export function Auth() {
 	const { register, handleSubmit, reset } = useForm<IAuthForm>({
@@ -33,6 +35,9 @@ export function Auth() {
 			toast.success(isLoginForm ? 'Login successful!' : 'Registration successful! Please login.')
 			reset()
 			push(DASHBOARD_PAGES.HOME)
+		},
+		onError(e: AxiosError) {
+			toast.error(errorCatch(e))
 		}
 	})
 
